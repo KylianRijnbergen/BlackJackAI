@@ -18,7 +18,7 @@ def main():
     print(f"Winrate of AI is : {rewarding_ai.get_winrate()}")
     df = pd.DataFrame(data=rewarding_ai.states_hashdict)
     df = df.T
-    df.to_excel("Runs_5e5_iters.xlsx")
+    df.to_excel("Runs_1e6_iters.xlsx")
 
 
 if __name__ == '__main__':
