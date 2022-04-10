@@ -154,3 +154,4 @@ class Game:
 if __name__ == "__main__":
     gme = Game()
     print(gme)
+    print("")
