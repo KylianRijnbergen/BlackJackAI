@@ -29,3 +29,4 @@ class Shoe:
 if __name__ == '__main__':
     inst1 = Shoe(6)
     print(inst1)
+    print("")
