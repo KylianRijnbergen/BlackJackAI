@@ -57,8 +57,11 @@ class Game:
             # Gambler wins by blackjack if gambler has 21 and dealer is busted.
             elif 21 == gambler_pts > dealer_pts or gambler_pts == 21 < dealer_pts:
                 round_result = "Gambler won by blackjack"
+            elif gambler_pts == dealer_pts < 21:
+                round_result = "Draw"
             else:
                 round_result = "Dealer won"
+
             if not self.auto:
                 pass#print(round_result)
             player_decisions.append(gambler.decisions)
@@ -90,8 +93,7 @@ class Game:
             if not self.auto:
                 pass
             #print(gambler)
-            print(type(stt), type(actn))
-            return stt, actn
+        return stt, actn
 
     def play_dealer(self):
         if not self.auto:
@@ -146,7 +148,7 @@ class Game:
         else:
             chosen_input = input("Stay or Hit? ['s', 'h'] ")
 
-        print(type(state_), type(gambler.decisions[-1]))
+        #print(type(state_), type(gambler.decisions[-1]))
 
         return (False, state_, gambler.decisions[-1]) if chosen_input == "s" else (True, state_, gambler.decisions[-1])
 

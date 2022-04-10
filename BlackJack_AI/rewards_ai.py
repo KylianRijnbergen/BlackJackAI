@@ -9,6 +9,7 @@ class RewardsAI:
         self.win_by_blackjack = 0
         self.loss = 0
         self.games = 0
+        self.draw = 0
 
     def add_state(self, state, decision, result):
         hash_state = state
@@ -29,6 +30,10 @@ class RewardsAI:
             if self.games > 10 ** 7:
                 self.loss += 1
             reward = -1
+        if result == "Draw":
+            if self.games > 10 ** 7:
+                self.draw += 1
+            reward = 0
         #print(result)
 
         if decision == "h":
@@ -45,7 +50,11 @@ class RewardsAI:
                 self.states_hashdict[hash_state][2].append(result_hash)
 
     def get_winrate(self):
-        return (self.wins + self.win_by_blackjack)/max(1, (self.wins + self.win_by_blackjack + self.loss))
+        return (self.wins + self.win_by_blackjack)/self.games
+
+    def get_win_draw_rate(self):
+        return (self.wins + self.win_by_blackjack + self.draw)/self.games
+
 
     def choose(self, state):
         hash_state = state
