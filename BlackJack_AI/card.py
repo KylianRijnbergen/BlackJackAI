@@ -37,3 +37,4 @@ class Card:
 
 if __name__ == '__main__':
     inst1 = Card(10)
+    print("")
