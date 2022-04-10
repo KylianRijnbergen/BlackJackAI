@@ -83,3 +83,4 @@ if __name__ == '__main__':
     inst1.show_hand()
     inst2 = Dealer()
     inst2.show_hand()
+    print("")
