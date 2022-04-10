@@ -26,4 +26,5 @@ if __name__ == '__main__':
     inst1 = Deck()
     print(inst1)
     print(inst1.get_counts())
+    print("")
 
