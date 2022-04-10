@@ -50,10 +50,10 @@ class RewardsAI:
                 self.states_hashdict[hash_state][2].append(result_hash)
 
     def get_winrate(self):
-        return (self.wins + self.win_by_blackjack)/self.games
+        return (self.wins + self.win_by_blackjack)/max(1,(self.wins + self.win_by_blackjack + self.draw + self.loss))
 
     def get_win_draw_rate(self):
-        return (self.wins + self.win_by_blackjack + self.draw)/self.games
+        return (self.wins + self.win_by_blackjack + self.draw)/max(1,(self.wins + self.win_by_blackjack + self.draw + self.loss))
 
 
     def choose(self, state):
